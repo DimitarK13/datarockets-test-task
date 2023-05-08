@@ -1,7 +1,7 @@
 :root {
   font-family: 'Space Mono', system-ui, -apple-system, monospace;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 16px;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -9,8 +9,8 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --clr-primary-400: hsl(172, 67%, 45%);
   --clr-primary-900: hsl(183, 100%, 15%);
+  --clr-primary-400: hsl(172, 67%, 45%);
   --clr-primary-300: hsl(184, 14%, 56%);
   --clr-primary-200: hsl(185, 41%, 84%);
   --clr-primary-100: hsl(189, 41%, 97%);
@@ -24,14 +24,11 @@ a {
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
+  border-radius: 6px;
+  border: none;
   padding: 0.6em 1.2em;
   font-size: 1em;
-  font-weight: 700;
-  font-family: inherit;
   cursor: pointer;
-  transition: border-color 0.25s;
 }
 
 *,
@@ -49,6 +46,9 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+
+  background-color: var(--clr-primary-200);
+  color: var(--clr-primary-300);
 }
 
 img,

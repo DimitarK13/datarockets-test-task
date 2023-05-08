@@ -1,0 +1,81 @@
+.container {
+  background-color: var(--clr-neutral-100);
+  border-radius: 1rem 1rem 0 0;
+  padding: 1.5rem;
+}
+
+.container input {
+  border: none;
+  background-color: var(--clr-primary-100);
+  border-radius: 3px;
+  color: var(--clr-primary-900);
+  font-size: 24px;
+  text-align: right;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.container input::placeholder {
+  color: var(--clr-primary-900);
+  opacity: 50%;
+}
+
+.container button {
+  background-color: var(--clr-primary-900);
+  color: var(--clr-primary-100);
+  font-size: 24px;
+}
+
+.container .column > div {
+  margin-block: 1rem;
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.flex-wrap > * {
+  flex: calc(50% - 1rem);
+}
+
+.container .bg-dark {
+  padding: 1rem;
+  background-color: var(--clr-primary-900);
+  border-radius: 0.75rem;
+}
+
+.container .bg-dark .flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container .bg-dark button {
+  background-color: var(--clr-primary-400);
+  color: var(--clr-primary-900);
+  width: 100%;
+  margin-top: 1rem;
+  font-size: 24px;
+}
+
+.error-msg {
+  color: red;
+}
+
+.text-s {
+  font-size: 14px;
+}
+
+.text-l {
+  font-size: 24px;
+}
+
+.light {
+  color: var(--clr-primary-100);
+}
+
+.accent {
+  color: var(--clr-primary-400);
+}

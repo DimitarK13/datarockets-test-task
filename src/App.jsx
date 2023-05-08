@@ -34,12 +34,14 @@ function App() {
           <div>
             <label htmlFor='bill'>Bill</label>
             <input
+              className='dollar'
               type='number'
               id='bill'
               value={bill}
               onChange={(e) => setBill(e.target.value)}
             />
           </div>
+
           <div>
             <p>Select Tip %</p>
 
@@ -61,50 +63,42 @@ function App() {
               </button>
               <input
                 type='number'
+                placeholder='Custom'
                 value={tipPercent}
                 onChange={(e) => setTipPercent(e.target.value)}
               />
             </div>
-
-            <div>
-              <label htmlFor='number-of-people'>Number of People</label>
-              <input
-                min='1'
-                type='number'
-                id='number-of-people'
-                value={numPeople}
-                onChange={(e) => setNumPeople(e.target.value)}
-              />
-              <p>{errorMsg}</p>
-            </div>
+          </div>
+          <div>
+            <label htmlFor='number-of-people'>Number of People</label>
+            <input
+              min='1'
+              type='number'
+              id='number-of-people'
+              value={numPeople}
+              onChange={(e) => setNumPeople(e.target.value)}
+            />
+            <p className='error-msg'>{errorMsg}</p>
           </div>
         </div>
-        <div className='column'>
+        <div className='column bg-dark'>
           <div className='flex-container'>
             <div>
-              <p>Tip Amount</p>
-              <p>/ person</p>
+              <p className='light'>Tip Amount</p>
+              <p className='text-s'>/ person</p>
             </div>
-            <p id='tip-amount'>${tipAmount.toFixed(2)}</p>
+            <p className='accent text-l'>${tipAmount.toFixed(2)}</p>
           </div>
           <div className='flex-container'>
             <div>
-              <p>Total</p>
-              <p>/ person</p>
+              <p className='light'>Total</p>
+              <p className='text-s'>/ person</p>
             </div>
-            <p id='total-amount'>${perPerson.toFixed(2)}</p>
+            <p className='accent text-l'>${perPerson.toFixed(2)}</p>
           </div>
 
           <button>Reset</button>
         </div>
-      </div>
-
-      <div className='attribution'>
-        Challenge by{' '}
-        <a href='https://www.frontendmentor.io?ref=challenge'>
-          Frontend Mentor
-        </a>
-        . Coded by <a href='https://dimitark.com'>Dimitar Kalapocev</a>.
       </div>
     </div>
   );
