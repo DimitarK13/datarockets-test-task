@@ -1,35 +1,71 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div>
+      <div className='container'>
+        <div className='column'>
+          <div>
+            <label htmlFor='bill'>Bill</label>
+            <input type='number' id='bill' />
+          </div>
+          <div>
+            <p>Select Tip %</p>
+
+            <div className='flex-wrap'>
+              <button className='tip-btn' id='5'>
+                5%
+              </button>
+              <button className='tip-btn' id='5'>
+                10%
+              </button>
+              <button className='tip-btn' id='5'>
+                15%
+              </button>
+              <button className='tip-btn' id='5'>
+                25%
+              </button>
+              <button className='tip-btn' id='5'>
+                50%
+              </button>
+              <input type='number' id='custom-tip' />
+            </div>
+
+            <div>
+              <label htmlFor='number-of-people'>Number of People</label>
+              <input type='number' id='number-of-people' />
+            </div>
+          </div>
+        </div>
+        <div className='column'>
+          <div className='flex-container'>
+            <div>
+              <p>Tip Amount</p>
+              <p>/ person</p>
+            </div>
+            <p id='tip-amount'>$0.00</p>
+          </div>
+          <div className='flex-container'>
+            <div>
+              <p>Total</p>
+              <p>/ person</p>
+            </div>
+            <p id='total-amount'>$0.00</p>
+          </div>
+
+          <button>Reset</button>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+
+      <div className='attribution'>
+        Challenge by{' '}
+        <a href='https://www.frontendmentor.io?ref=challenge'>
+          Frontend Mentor
+        </a>
+        . Coded by <a href='https://dimitark.com'>Dimitar Kalapocev</a>.
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
