@@ -13,6 +13,7 @@ function App() {
     const billAmount = parseFloat(bill);
     const tipPercentAmount = parseFloat(tipPercent) / 100;
     const numPeopleAmount = parseFloat(numPeople);
+
     if (billAmount > 0 && tipPercentAmount > 0 && numPeopleAmount > 0) {
       const tip = (billAmount * tipPercentAmount) / numPeople;
       const perPerson = billAmount / numPeopleAmount + tip;
@@ -23,7 +24,12 @@ function App() {
     } else {
       setTipAmount(0);
       setPerPersonAmount(0);
-      setErrorMsg(`Can't be zero`);
+
+      if (bill || tipPercent || numPeople) {
+        setErrorMsg(`Please fill out all fields`);
+      } else {
+        setErrorMsg('');
+      }
     }
   }, [bill, tipPercent, numPeople]);
 
@@ -40,9 +46,8 @@ function App() {
           <div>
             <label htmlFor='bill'>Bill</label>
             <input
-              className='dollar'
               type='number'
-              id='bill'
+              placeholder='0'
               value={bill}
               onChange={(e) => setBill(e.target.value)}
             />
@@ -80,7 +85,7 @@ function App() {
             <input
               min='1'
               type='number'
-              id='number-of-people'
+              placeholder='0'
               value={numPeople}
               onChange={(e) => setNumPeople(e.target.value)}
             />
@@ -88,19 +93,21 @@ function App() {
           </div>
         </div>
         <div className='column bg-dark'>
-          <div className='flex-container'>
-            <div>
-              <p className='light'>Tip Amount</p>
-              <p className='text-s'>/ person</p>
+          <div>
+            <div className='flex-container'>
+              <div>
+                <p className='light'>Tip Amount</p>
+                <p className='text-s'>/ person</p>
+              </div>
+              <p className='accent text-l'>${tipAmount.toFixed(2)}</p>
             </div>
-            <p className='accent text-l'>${tipAmount.toFixed(2)}</p>
-          </div>
-          <div className='flex-container'>
-            <div>
-              <p className='light'>Total</p>
-              <p className='text-s'>/ person</p>
+            <div className='flex-container'>
+              <div>
+                <p className='light'>Total</p>
+                <p className='text-s'>/ person</p>
+              </div>
+              <p className='accent text-l'>${perPerson.toFixed(2)}</p>
             </div>
-            <p className='accent text-l'>${perPerson.toFixed(2)}</p>
           </div>
 
           <button onClick={resetFields}>Reset</button>
