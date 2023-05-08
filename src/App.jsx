@@ -27,6 +27,12 @@ function App() {
     }
   }, [bill, tipPercent, numPeople]);
 
+  const resetFields = () => {
+    setBill('');
+    setTipPercent('');
+    setNumPeople('');
+  };
+
   return (
     <div>
       <div className='container'>
@@ -97,7 +103,7 @@ function App() {
             <p className='accent text-l'>${perPerson.toFixed(2)}</p>
           </div>
 
-          <button>Reset</button>
+          <button onClick={resetFields}>Reset</button>
         </div>
       </div>
     </div>
